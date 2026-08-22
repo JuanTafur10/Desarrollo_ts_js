@@ -90,8 +90,6 @@ const estudiantes = [
     }
 ];
 
-let suma_promedios = 0;
-
 for (const estudiante of estudiantes) {
 
     let suma_notas = 0;
@@ -102,16 +100,11 @@ for (const estudiante of estudiantes) {
 
     let promedio = suma_notas / estudiante.materias.length;
 
-    console.log(
-        "El promedio de",
-        estudiante.nombre,
-        "es:",
-        promedio
-    );
-
-    suma_promedios = suma_promedios + promedio;
+    if (promedio > 3.5) {
+        console.log(
+            estudiante.nombre,
+            "tiene un promedio de:",
+            promedio
+        );
+    }
 }
-
-let promedio_general = suma_promedios / estudiantes.length;
-
-console.log("El promedio de todos los estudiantes es:", promedio_general);
